@@ -6,7 +6,6 @@ module.exports = class UserRepository {
      * file location on the server
      */
     fileLoc;
-
     /**
      * Constructor with file where to save user-data
      * @param fileName
@@ -14,7 +13,6 @@ module.exports = class UserRepository {
     constructor(fileName) {
         this.fileLoc = path.resolve(fileName);
     }
-
     /**
      *
      * @returns Promise for reading data
@@ -35,7 +33,6 @@ module.exports = class UserRepository {
                 })
         });
     }
-
     /**
      *
      * @param data
@@ -55,8 +52,6 @@ module.exports = class UserRepository {
         });
     }
 }
-
-
 //export WITHOUT beackets!
 /*
 module.exports = {

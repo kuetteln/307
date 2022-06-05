@@ -9,12 +9,10 @@
 function showError(id, message) {
     return `${id}: ${message}`;
 }
-
 // Show success outline
 function showSuccess(id) {
     return `${id} successfully validated!`;
 }
-
 // Check email is valid
 function checkEmail(id,input) {
     //Default: is valid
@@ -57,10 +55,8 @@ function checkTelefon(id,input) {
     }
     return result;
 }
-
 //TODO: Check article for throwing errors in node js
 // https://stackoverflow.com/questions/33086247/throwing-an-error-in-node-js
-
 // Check required fields
 function checkRequired(id, input) {
     //Default: is valid
@@ -79,7 +75,6 @@ function checkRequired(id, input) {
     //return validation result
     return result;
 }
-
 // Check input length
 function checkLength(id, input, min, max) {
     //Default: is valid
@@ -102,7 +97,6 @@ function checkLength(id, input, min, max) {
     }
     return result;
 }
-
 /**
  *  Export validation functions for further usage.
  *  function to export WITHOUT brackets!

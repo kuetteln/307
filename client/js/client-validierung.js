@@ -7,7 +7,6 @@ const vorname = document.getElementById('vorname');
 const telefon = document.getElementById('telefon');
 const monat = document.getElementById('monat');
 const forderung = document.getElementById('forderung');
-
 // Show input error message
 function showError(input, message) {
     const formControl = input.parentElement;
@@ -15,14 +14,11 @@ function showError(input, message) {
     const small = formControl.querySelector('small');
     small.innerText = message;
 }
-
 // Show success outline
 function showSuccess(input, message) {
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
-
 }
-
 // Check email is valid
 function checkEmail(input) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -32,7 +28,6 @@ function checkEmail(input) {
         showError(input, 'Email ungültig');
     }
 }
-
 function ValidateEmail(mail) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
         return (true)
@@ -40,8 +35,6 @@ function ValidateEmail(mail) {
     showError(input, 'Email ungültig');
     return (false)
 }
-
-
 function checkPhone(input) {
     const re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if (re.test(input.value.trim())) {
@@ -50,8 +43,6 @@ function checkPhone(input) {
         showError(input, 'Telefon ungültig');
     }
 }
-
-
 
 // Check number
 function checkNumber(input) {
@@ -63,7 +54,6 @@ function checkNumber(input) {
         showError(input, "Nummer ist ungültig");
     }
 }
-
 // Check required fields
 function checkRequired(inputArr) {
     let isRequired = false;
@@ -77,7 +67,7 @@ function checkRequired(inputArr) {
     });
     return isRequired;
 }
-
+//Check ob das Feld Art der Forderung ausgefüllt ist
 function checkDDL(input) {
     let isRequired = false;
     console.log(`DDL ${input.value}`)
@@ -89,7 +79,6 @@ function checkDDL(input) {
     }
     return isRequired;
 }
-
 function checkPflicht(inputArr) {
     let isRequired = false;
     inputArr.forEach(function (option) {
@@ -100,11 +89,8 @@ function checkPflicht(inputArr) {
             showSuccess(option);
         }
     });
-
     return isRequired;
 }
-
-
 // Check input length
 function checkLength(input, min, max) {
     if (input.value.length < min) {
@@ -119,12 +105,10 @@ function checkLength(input, min, max) {
         showSuccess(input);
     }
 }
-
 // Get fieldname
 function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
-
 // Validate form input elements
 function validateForm() {
     if (!checkRequired([name, email, vorname, telefon, monat,nachricht])) {
@@ -135,7 +119,6 @@ function validateForm() {
         checkPhone(telefon);
     }
 }
-
 /**
  * Send form data to server
  * Info: https://stackoverflow.com/questions/4295782/how-to-process-post-data-in-node-js
@@ -156,8 +139,6 @@ function sendForm() {
     });
 
 }
-
-
 // Event listeners
 form.addEventListener('submit', function (e) {
     //https://www.w3schools.com/jsref/event_preventdefault.asp
